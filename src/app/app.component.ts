@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  bankName = 'Bank of San Diego';
+  bankName = 'Fortini Credit Union';
   account: any = {
     fname: 'first name',
     lname: 'last name',
