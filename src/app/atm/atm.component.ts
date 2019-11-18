@@ -22,14 +22,12 @@ export class AtmComponent {
     this.transactionDetails('Deposited');
   }
   transactionDetails(transactionType) {
-    alert(
-      `Transaction Successful
-      Amount ${transactionType}: ${this.value}
-      Account Balance:  ${this.bankService.account.balance}`
-      );
+    // Display Transaction Details
     this.transDetails =
     `Transaction Successful!
     Amount ${transactionType}: ${this.value},
     Account Balance:  ${this.bankService.account.balance}`;
+
+    // Add Object to Transaction History
   }
 }
