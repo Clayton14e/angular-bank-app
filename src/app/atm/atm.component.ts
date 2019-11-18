@@ -40,10 +40,13 @@ export class AtmComponent {
     for (let i = this.trans.length - 1; i >= 0; i--) {
       this.transDetails +=
       `
-      ${this.bankService.account.transactions[i].date}
-       ${this.trans[i].type}
-      $${this.trans[i].amount}
-       ${this.trans[i].currency}`;
+      ${this.bankService.account.transactions[i].date} ${this.trans[i].type}
+      $${this.trans[i].amount} ${this.trans[i].currency}
+      `;
     }
+  }
+  balanceCheck() {
+    this.transDetails = `Account balance:
+    $${this.bankService.account.balance}`;
   }
 }

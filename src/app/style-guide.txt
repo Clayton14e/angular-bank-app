@@ -1,0 +1,19 @@
+Colors:
+
+Soft red -    rgb(252, 3, 86)
+              #ff0055
+
+Soft pink -   rgb(255, 51, 119)
+              #ff3377
+
+Algae -       rgb(0, 92, 80)
+              #005c50
+
+Soft Algae -  rgb(0, 173, 151)
+              #00ad97
+
+Highlight -   rgb(0, 255, 195)
+              #00ffc3
+
+Background -  rgb(211, 237, 234)
+

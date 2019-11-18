@@ -1,17 +1,30 @@
-
+button{
+  background-color: rgb(252, 3, 86);
+  border: none;
+  color: whitesmoke;
+  width: 30%;
+  padding: 10px;
+}
+button:hover{
+  background-color: rgb(255, 51, 119);
+  box-shadow: 0 6px 8px 0 rgba(0,0,0,0.24), 0 12px 25px 0 rgba(0,0,0,0.19);
+}
 .main {
   display: flex;
-  flex-flow: row nowrap;
+  flex-flow: column;
 }
 
 .display {
-  flex-basis: 50vw;
-  background-color: darkslategrey;
+  flex-basis: 40vh;
+  background-color: rgb(100, 121, 121);
   color: white;
 }
-
+.page-inputs {
+  background-color: rgb(100, 121, 121);
+  flex-basis: 40vh;
+}
 .options {
-  flex-basis: 50vw;
+  margin-top: 100px;
 }
 
 .options-list {
@@ -19,5 +32,11 @@
 }
 
 .options-item {
+  /* background-color: rgb(252, 3, 86); */
+  margin-right: 40px;
+}
 
+.money-field {
+  align-self: center;
+  color: whitesmoke;
 }

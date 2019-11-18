@@ -1,31 +1,35 @@
-<h1>ATM View</h1>
+
 <div class="main">
   <section class="display">
+    <h1>ATM View</h1>
     > Welcome, Bank user!
     <!-- Display Feedback information here -->
     <div class="transaction-details">
       <p style="white-space: pre-line;">{{ transDetails }}</p>
     </div>
   </section>
+  <section class='page-inputs'>
   <div class="money-field">
+    <label for='money-input'>Enter Amount: </label>
     <input class="money-input"  type='number' [(ngModel)]='value'>
   </div>
 
-  <aside class="options">
+  <div class="options">
     <!-- Add functionality to the buttons below -->
     <ul class="options-list">
       <li class="options-item">
-        <button (click)='withdraw()'>Make a Widthdrawl</button>
+        <button (click)='withdraw()'>Withdraw</button>
       </li>
       <li class="options-item">
-        <button (click)='deposit()'>Deposit Money</button>
+        <button (click)='deposit()'>Deposit</button>
       </li>
       <li class="options-item">
-        <button>Balance Inquiry</button>
+        <button (click)='balanceCheck()'>Balance Inquiry</button>
       </li>
       <li class="options-item">
         <button (click)='transactionHistory()'>Transactions History</button>
       </li>
     </ul>
-  </aside>
+  </div>
+  </section>
 </div>
