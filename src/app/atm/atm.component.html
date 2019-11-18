@@ -4,11 +4,11 @@
     > Welcome, Bank user!
     <!-- Display Feedback information here -->
     <div class="transaction-details">
-      <p>{{ transDetails }}</p>
+      <p style="white-space: pre-line;">{{ transDetails }}</p>
     </div>
   </section>
   <div class="money-field">
-    <input class="money-input" type='number' [(ngModel)]='value'>
+    <input class="money-input"  type='number' [(ngModel)]='value'>
   </div>
 
   <aside class="options">
@@ -24,7 +24,7 @@
         <button>Balance Inquiry</button>
       </li>
       <li class="options-item">
-        <button>Transactions History</button>
+        <button (click)='transactionHistory()'>Transactions History</button>
       </li>
     </ul>
   </aside>
