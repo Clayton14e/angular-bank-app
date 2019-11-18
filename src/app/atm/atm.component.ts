@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AppModule } from '../app.module';
 import { BankService } from '../bank.service';
 
 @Component({
@@ -7,7 +8,28 @@ import { BankService } from '../bank.service';
   styleUrls: ['./atm.component.css']
 })
 export class AtmComponent {
+  value = 0;
+  transDetails = '';
+  constructor(public bankService: BankService) { }
 
-  constructor() { }
-
+  withdraw() {
+    // Withdraw money from Bank Service account balance
+    this.bankService.account.balance -= this.value;
+    this.transactionDetails('Withdrawn');
+  }
+  deposit() {
+    this.bankService.account.balance += this.value;
+    this.transactionDetails('Deposited');
+  }
+  transactionDetails(transactionType) {
+    alert(
+      `Transaction Successful
+      Amount ${transactionType}: ${this.value}
+      Account Balance:  ${this.bankService.account.balance}`
+      );
+    this.transDetails =
+    `Transaction Successful!
+    Amount ${transactionType}: ${this.value},
+    Account Balance:  ${this.bankService.account.balance}`;
+  }
 }
