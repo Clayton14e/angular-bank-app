@@ -11,7 +11,9 @@ export class AtmComponent {
   constructor(public bankService: BankService) { }
 
   balanceCheck() {
-    this.bankService.isHistory = this.bankService.isHistory === false ? true : false;
+    if(this.bankService.isHistory){
+      this.bankService.isHistory = false;
+    }
     this.bankService.transDetails = `Account balance:
     $${this.bankService.account.balance}`;
   }

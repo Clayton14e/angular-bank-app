@@ -51,13 +51,17 @@ trans = this.account.transactions;
 // Withdraw Function
 withdraw() {
   // Withdraw money from Bank Service account balance
-  this.isHistory = this.isHistory === false ? true : false;
+  if (this.isHistory) {
+    this.isHistory = false;
+  }
   this.account.balance -= this.value;
   this.transactionDetails('withdrawal');
 }
 // Deposit Function
 deposit() {
-  this.isHistory = this.isHistory === false ? true : false;
+  if (this.isHistory) {
+    this.isHistory = false;
+  }
   this.account.balance += this.value;
   this.transactionDetails('deposit');
 }
