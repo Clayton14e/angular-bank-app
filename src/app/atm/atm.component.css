@@ -4,6 +4,7 @@ button{
   color: whitesmoke;
   width: 30%;
   padding: 10px;
+  font-size: 1rem;
 }
 button:hover{
   background-color: rgb(255, 51, 119);
@@ -15,16 +16,16 @@ button:hover{
 }
 
 .display {
-  flex-basis: 40vh;
+  flex-basis: 38vh;
   background-color: rgb(100, 121, 121);
   color: white;
 }
 .page-inputs {
   background-color: rgb(100, 121, 121);
-  flex-basis: 40vh;
+  flex-basis: 35vh;
 }
 .options {
-  margin-top: 100px;
+  margin-top: 40px;
 }
 
 .options-list {
@@ -39,4 +40,13 @@ button:hover{
 .money-field {
   align-self: center;
   color: whitesmoke;
+}
+.money-input {
+  border: 2px solid rgb(0, 173, 151);
+  padding: 10px;
+  border-radius: 10px;
+  width: 5%;
+}
+.money-input:focus{
+  box-shadow: 0 2px 4px 0 rgba(0, 255, 195, 0.75), 0 8px 16px 0 rgba(0, 255, 195, 0.25);
 }

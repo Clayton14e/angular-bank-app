@@ -36,8 +36,8 @@ export class AtmComponent {
     currency: 'usd'});
   }
   transactionHistory() {
-    this.transDetails = `Recent Transactions: `;
-    for (let i = this.trans.length - 1; i >= 0; i--) {
+    this.transDetails = `Recent Transactions: ${this.trans.length} `;
+    for (let i = this.trans.length - 1; i >= 1; i--) {
       this.transDetails +=
       `
       ${this.bankService.account.transactions[i].date} ${this.trans[i].type}
