@@ -5,30 +5,36 @@
     Welcome! Thank you for being a loyal member.
     <!-- Display Feedback information here -->
     <div class="transaction-details">
-      <p style="white-space: pre-line;">{{ transDetails }}</p>
+      <p *ngIf="!bankService.isHistory" style="white-space: pre-line;">{{ bankService.transDetails }}</p>
+      <div *ngIf="bankService.isHistory">
+        <div *ngFor="let transaction of bankService.account.transactions | slice:-3">
+          <p>{{transaction.type}}</p>
+          <p>{{transaction.amount}}</p>
+          <p>{{transaction.date}}</p>
+        </div>
+      </div>
     </div>
   </section>
   <section class='page-inputs'>
   <div class="money-field">
-    <!-- <label for='money-input'>Enter Amount: </label> -->
     <h4>Enter Amount:</h4>
-    <input class="money-input"  type='number' [(ngModel)]='value'>
+    <input class="money-input"  type='number' [(ngModel)]='bankService.value'>
   </div>
 
   <div class="options">
     <!-- Add functionality to the buttons below -->
     <ul class="options-list">
       <li class="options-item">
-        <button (click)='withdraw()'>Withdraw</button>
+        <button (click)='bankService.withdraw()'>Withdraw</button>
       </li>
       <li class="options-item">
-        <button (click)='deposit()'>Deposit</button>
+        <button (click)='bankService.deposit()'>Deposit</button>
       </li>
       <li class="options-item">
         <button (click)='balanceCheck()'>Balance Inquiry</button>
       </li>
       <li class="options-item">
-        <button (click)='transactionHistory()'>Transactions History</button>
+        <button (click)='bankService.transactionHistory()'>Transactions History</button>
       </li>
     </ul>
   </div>

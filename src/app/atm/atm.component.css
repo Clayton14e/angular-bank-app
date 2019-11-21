@@ -1,3 +1,7 @@
+p{
+  font-size: 12px;
+  line-height: 0.5rem;
+}
 button{
   background-color: rgb(252, 3, 86);
   border: none;

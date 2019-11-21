@@ -4,17 +4,17 @@
 
 .main {
   display: flex;
-  flex-flow: row nowrap;
+  flex-flow: column;
 }
 
 .display {
-  flex-basis: 50vw;
+  flex-basis: 38vh;
   background-color: darkslategrey;
   color: white;
 }
 
 .options {
-  flex-basis: 50vw;
+  flex-basis: 35vh;
 }
 
 .options-list {

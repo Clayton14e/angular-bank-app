@@ -5,6 +5,10 @@ import { Injectable } from '@angular/core';
 })
 export class BankService {
   constructor() { }
+  isHistory = false;
+  value = 0;
+  transDetails = '';
+
 
   account: any = {
     fname: 'Clayton',
@@ -40,4 +44,47 @@ export class BankService {
       }
     ]
   };
+
+trans = this.account.transactions;
+
+// Methods
+// Withdraw Function
+withdraw() {
+  // Withdraw money from Bank Service account balance
+  this.isHistory = this.isHistory === false ? true : false;
+  this.account.balance -= this.value;
+  this.transactionDetails('withdrawal');
 }
+// Deposit Function
+deposit() {
+  this.isHistory = this.isHistory === false ? true : false;
+  this.account.balance += this.value;
+  this.transactionDetails('deposit');
+}
+// Transaction Details Function
+transactionDetails(transactionType) {
+  // Display Transaction Details
+  this.transDetails =
+  `Transaction Successful!
+  Amount ${transactionType}: $${this.value}
+  Account Balance:  $${this.account.balance}`;
+
+  // Add Object to Transaction History
+  this.account.transactions.push({date: '11-18-2019',
+  type: `${transactionType}`,
+  amount: `${this.value}`,
+  currency: 'usd'});
+}
+  // Toggle Transaction History
+transactionHistory() {
+  // this.transDetails = `Recent Transactions: ${this.trans.length} `;
+  // for (let i = this.trans.length - 1; i >= 1; i--) {
+  //   this.transDetails +=
+  //   `
+  //   ${this.account.transactions[i].date} ${this.trans[i].type}
+  //   $${this.trans[i].amount} ${this.trans[i].currency}
+  //   `;
+    this.isHistory = this.isHistory === false ? true : false;
+  }
+}
+

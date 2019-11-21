@@ -8,45 +8,11 @@ import { BankService } from '../bank.service';
   styleUrls: ['./atm.component.css']
 })
 export class AtmComponent {
-  value = 0;
-  transDetails = '';
-  trans = this.bankService.account.transactions;
   constructor(public bankService: BankService) { }
 
-  withdraw() {
-    // Withdraw money from Bank Service account balance
-    this.bankService.account.balance -= this.value;
-    this.transactionDetails('Withdrawn');
-  }
-  deposit() {
-    this.bankService.account.balance += this.value;
-    this.transactionDetails('Deposited');
-  }
-  transactionDetails(transactionType) {
-    // Display Transaction Details
-    this.transDetails =
-    `Transaction Successful!
-    Amount ${transactionType}: $${this.value}
-    Account Balance:  $${this.bankService.account.balance}`;
-
-    // Add Object to Transaction History
-    this.bankService.account.transactions.push({date: '11-18-2019',
-    type: `${transactionType}`,
-    amount: `${this.value}`,
-    currency: 'usd'});
-  }
-  transactionHistory() {
-    this.transDetails = `Recent Transactions: ${this.trans.length} `;
-    for (let i = this.trans.length - 1; i >= 1; i--) {
-      this.transDetails +=
-      `
-      ${this.bankService.account.transactions[i].date} ${this.trans[i].type}
-      $${this.trans[i].amount} ${this.trans[i].currency}
-      `;
-    }
-  }
   balanceCheck() {
-    this.transDetails = `Account balance:
+    this.bankService.isHistory = this.bankService.isHistory === false ? true : false;
+    this.bankService.transDetails = `Account balance:
     $${this.bankService.account.balance}`;
   }
 }
