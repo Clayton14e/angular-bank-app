@@ -12,3 +12,9 @@
 .content{
   clear: both;
 }
+.logo{
+  display: block;
+  float: left;
+  height: 50px;
+  width: 50px;
+}

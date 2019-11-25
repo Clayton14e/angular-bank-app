@@ -9,8 +9,7 @@
       <div *ngIf="bankService.isHistory">
         <div *ngFor="let transaction of bankService.account.transactions | slice:-3">
           <p>{{transaction.type}}</p>
-          <p>{{transaction.amount}}</p>
-          <p>{{transaction.date}}</p>
+          <p>${{transaction.amount}} on {{transaction.date}}</p>
         </div>
       </div>
     </div>

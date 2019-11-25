@@ -1,33 +1,38 @@
-<h1>Teller View</h1>
 <div class="main">
   <section class="display">
+      <h1>Teller View</h1>
     <!-- Display: Customer information except for when inquiring about transaction -->
     <h3>Customer Information</h3>
-    <p>Customer Name: First Last</p>
-    <p>Age: 100</p>
-    <p>Address: 1234 Test Lane.<br>
-      San Diego, CA 92000<br>
-      United States
+    <p>Customer Name: {{bankService.account.fname}} {{bankService.account.lname}}</p>
+    <p>Age: {{bankService.account.age}}</p>
+    <p>Address: {{bankService.account.address.street}}<br>
+      {{bankService.account.address.city}}, {{bankService.account.address.state}} {{bankService.account.address.zip}}<br>
+      {{bankService.account.address.country}}
     </p>
-    <br><br>
     <!-- Display: if inquiring about transactions -->
     <h3>Last 3 Transactions</h3>
-    <p>[01-01-2018] -  Deposit ($20 USD)</p>
-    <p>[01-01-2018] -  Withdrawal ($40 USD)</p>
-    <p>[01-01-2018] -  Deposit ($20 USD)</p>
-  </section>
-  <aside class="options">
+    <div *ngFor="let transaction of bankService.account.transactions | slice:-3">
+      <p>{{transaction.type}}</p>
+      <p>${{transaction.amount}} on {{transaction.date}}</p>
+    </div>
     <section class="balance">
       <!-- Display customer balance -->
-      $20.00 USD
+      <h3>Balance</h3>
+      ${{bankService.account.balance}}
     </section>
+  </section>
+  <aside class="options">
+      <div class="money-field">
+        <h4>Enter Amount:</h4>
+        <input class="money-input"  type='number' [(ngModel)]='bankService.value'>
+      </div>
     <!-- Add functionality to the buttons below -->
     <ul class="options-list">
       <li class="options-item">
-        <button>Widthdrawl for Customer</button>
+        <button (click)='bankService.withdraw()'>Widthdrawl for Customer</button>
       </li>
       <li class="options-item">
-        <button>Deposit for Customer</button>
+        <button (click)='bankService.deposit()'>Deposit for Customer</button>
       </li>
       <li class="options-item">
         <button>Customer Transaction History</button>

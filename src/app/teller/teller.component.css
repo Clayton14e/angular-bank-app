@@ -1,3 +1,15 @@
+button{
+  background-color: rgb(252, 3, 86);
+  border: none;
+  color: whitesmoke;
+  width: 30%;
+  padding: 10px;
+  font-size: 1rem;
+}
+button:hover{
+  background-color: rgb(255, 51, 119);
+  box-shadow: 0 6px 8px 0 rgba(0,0,0,0.24), 0 12px 25px 0 rgba(0,0,0,0.19);
+}
 .balance {
   display: block;
 }
@@ -9,18 +21,29 @@
 
 .display {
   flex-basis: 38vh;
-  background-color: darkslategrey;
+  background-color: rgb(100, 121, 121);
   color: white;
 }
 
 .options {
-  flex-basis: 35vh;
+  flex-basis: 20vh;
+  background-color: rgb(100, 121, 121);
+  color: white;
 }
 
 .options-list {
   list-style: none;
 }
-
+.money-field {
+  align-self: center;
+  color: whitesmoke;
+}
+.money-input {
+  border: 2px solid rgb(0, 173, 151);
+  padding: 10px;
+  border-radius: 10px;
+  width: 5%;
+}
 .options-item {
 
 }

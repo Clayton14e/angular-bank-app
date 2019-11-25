@@ -8,6 +8,6 @@ import { BankService } from '../bank.service';
 })
 export class TellerComponent {
 
-  constructor() { }
+  constructor(public bankService: BankService) { }
 
 }

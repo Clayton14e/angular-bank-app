@@ -13,13 +13,13 @@ export class BankService {
   account: any = {
     fname: 'Clayton',
     lname: 'Fortini',
-    age: 0,
+    age: 25,
     address: {
       street: '1234 street st',
-      city: 'city',
-      state: 'state',
-      zip: 12345,
-      country: 'canada'
+      city: 'San Diego',
+      state: 'CA',
+      zip: 92065,
+      country: 'USA'
     },
     balance: 100.01,
     currency: 'usd',
@@ -89,6 +89,12 @@ transactionHistory() {
   //   $${this.trans[i].amount} ${this.trans[i].currency}
   //   `;
     this.isHistory = this.isHistory === false ? true : false;
+
+    // if (this.isHistory === true){
+    //   this.isHistory = false;
+    // } else if (this.isHistory === false){
+    //   this.isHistory = true;
+    // }
   }
 }
 
