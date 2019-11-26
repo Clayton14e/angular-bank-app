@@ -1,0 +1,45 @@
+.main {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  color: white;
+}
+.contact {
+  flex-basis: 80vh;
+  background-color: rgb(100, 121, 121);
+}
+.modal{
+  flex-basis: 40vh;
+}
+button{
+  background-color: rgb(252, 3, 86);
+  border: none;
+  color: whitesmoke;
+  width: 20%;
+  padding: 10px;
+  font-size: 1rem;
+}
+button:hover{
+  background-color: rgb(255, 51, 119);
+  box-shadow: 0 6px 8px 0 rgba(0,0,0,0.24), 0 12px 25px 0 rgba(0,0,0,0.19);
+}
+#name{
+  width: 20%;
+}
+#email{
+  width: 20%;
+}
+textarea{
+  width: 20%;
+  height: 20%;
+}
+a{
+  background-color: rgb(103, 160, 160);
+  padding: 10px;
+  width: 20%;
+  color: rgb(228, 228, 228);
+  font-weight: bold;
+  border: none;
+  text-decoration: none;
+}
+
