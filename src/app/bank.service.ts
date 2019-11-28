@@ -81,20 +81,8 @@ transactionDetails(transactionType) {
 }
   // Toggle Transaction History
 transactionHistory() {
-  // this.transDetails = `Recent Transactions: ${this.trans.length} `;
-  // for (let i = this.trans.length - 1; i >= 1; i--) {
-  //   this.transDetails +=
-  //   `
-  //   ${this.account.transactions[i].date} ${this.trans[i].type}
-  //   $${this.trans[i].amount} ${this.trans[i].currency}
-  //   `;
-    this.isHistory = this.isHistory === false ? true : false;
 
-    // if (this.isHistory === true){
-    //   this.isHistory = false;
-    // } else if (this.isHistory === false){
-    //   this.isHistory = true;
-    // }
+    this.isHistory = this.isHistory === false ? true : false;
   }
 }
 
