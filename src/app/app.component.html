@@ -1,11 +1,17 @@
+<body>
 <div class='content'>
 <div style="text-align:center">
-  <!-- <img src='../assets/img/FCU-LOGO.png'> -->
-  <h1 id="bank-name">
-    {{ bankName }}
-  </h1>
-  <app-nav></app-nav>
+  <div  id='bank-name' >
+    <a routerLink='atm'>
+      <img class='logo' src='../assets/img/FCU-LOGO.png'>
+    </a>
+    <h1>
+      {{ bankName }}
+    </h1>
+    <app-nav></app-nav>
+  </div>
   <router-outlet></router-outlet>
 </div>
 </div>
+</body>
 
